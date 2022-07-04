@@ -1,79 +1,248 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth ease-in">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tesla - Web Company Profile</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
     <link rel="stylesheet" href="dist/output.css">
 </head>
 
-<body class="m-0 p-0">
+<body>
     <!-- Jalankan Tailwind dengan script: npm run start -->
     <!-- Jalankan Live Server dengan shortcut (Tahan)Alt + (Tekan)L (Kemudian)=> (Tekan)O (Bukan nol) -->
-    <header class="transition duration-500 absolute top-0 left-0 w-full flex items-center justify-center z-10">
-        <!-- Berisi logo dan navigasi menu -->
+    <header class="transition duration-500 absolute top-0 left-0 w-full flex items-center z-10 justify-center">
         <div class="container">
-            <nav
-                class="absolute py-5 mx-0 shadow-lg rounded-lg max-w-[250px] w-full right-4 top-full lg:block lg:static lg:max-w-full lg:shadow-none lg:rounded-none">
-                <ul class="block lg:flex items-center justify-evenly">
-                    <li class="group mx-5 transition duration-200 hover:text-white">
-                        <a href="#home">
-                            Beranda
-                        </a>
-                    </li>
-                    <li class="group mx-5 transition duration-200 hover:text-white">
-                        <a href="#product">
-                            Produk
-                        </a>
-                    </li>
-                    <li class="group mx-5 transition duration-200 hover:text-white">
-                        <a href="#about">
-                            Tentang Kami
-                        </a>
-                    </li>
-                    <a href="#home" class="lg:block md:hidden">
-                        <img src="dist/image/logo.png" alt="logo" class="w-10">
+            <div class="flex items-center justify-center relative py-2">
+                <!-- Logo ketika hamburger muncul -->
+                <div class="px-3 w-16 lg:hidden">
+                    <a href="#home">
+                        <img src="dist/image/logo.png" alt="logo">
                     </a>
-                    <li class="group mx-5 transition duration-200 hover:text-white">
-                        <a href="#contact">
-                            Kontak Kami
+                </div>
+
+                <!-- Hamburger -->
+                <div class="flex items-center w-full">
+                    <button id="hamburger" name="hamburger" type="button" class="block absolute right-5 lg:hidden">
+                        <span
+                            class="w-[30px] h-0.5 my-2 block bg-black transition duration-300 ease-in-out origin-top-left"></span>
+                        <span class="w-[30px] h-0.5 my-2 block bg-black transition duration-300 ease-in-out"></span>
+                        <span
+                            class="w-[30px] h-0.5 my-2 block bg-black transition duration-300 ease-in-out origin-bottom-left"></span>
+                    </button>
+                    <nav
+                        class="hidden bg-white/70 absolute right-4 max-w-[250px] w-full rounded-lg shadow-lg top-full justify-evenly lg:bg-transparent lg:shadow-none lg:flex lg:static lg:max-w-full lg:rounded-none">
+                        <ul class="block lg:flex items-center w-full justify-evenly">
+                            <li class="group">
+                                <a href="#home"
+                                    class="px-5 py-2 flex rounded-full transition duration-200 font-bold group-hover:bg-slate-200/75">
+                                    Beranda
+                                </a>
+                            </li>
+                            <li class="group">
+                                <a href="#product"
+                                    class="px-5 py-2 flex rounded-full transition duration-200 font-bold group-hover:bg-slate-200/75">
+                                    Produk
+                                </a>
+                            </li>
+                            <li class="group">
+                                <a href="#about"
+                                    class="px-5 py-2 flex rounded-full transition duration-200 font-bold group-hover:bg-slate-200/75">
+                                    Tentang Kami
+                                </a>
+                            </li>
+                        </ul>
+                        <a href="#home" class="hidden lg:block">
+                            <img src="dist/image/logo.png" alt="logo" class="w-20">
                         </a>
-                    </li>
-                    <li class="group mx-5 transition duration-200 hover:text-white">
-                        <a href="#team">
-                            Tim
-                        </a>
-                    </li>
-                    <li class="group mx-5 transition duration-200 hover:text-white">
-                        <a href="login.html">
-                            Login
-                        </a>
-                    </li>
-                </ul>
-            </nav>
+                        <ul class="block lg:flex items-center w-full justify-evenly">
+                            <li class="group">
+                                <a href="#contact"
+                                    class="px-5 py-2 flex rounded-full transition duration-200 font-bold group-hover:bg-slate-200/75">
+                                    Kontak Kami
+                                </a>
+                            </li>
+                            <li class="group">
+                                <a href="#team"
+                                    class="px-5 py-2 flex rounded-full transition duration-200 font-bold group-hover:bg-slate-200/75">
+                                    Tim
+                                </a>
+                            </li>
+                            <li class="group">
+                                <a href="login.html"
+                                    class="px-5 py-2 flex rounded-full transition duration-200 font-bold group-hover:bg-slate-200/75">
+                                    Login
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+
+            </div>
         </div>
+        <!-- Berisi logo dan navigasi menu -->
+
     </header>
 
     <main>
-
         <!-- Berisi konten yang akan ditampilkan -->
-        <div class="snap-mandatory snap-x h-screen flex overflow-scroll">
-            <div class="snap-center w-full flex-shrink-0 items-center justify-center">
-                <img src="dist/image/cars/model-s.jpg" alt="Model S" class="w-full">
-            </div>
-            <div class="snap-center w-full flex-shrink-0 items-center justify-center">
-                <img src="dist/image/cars/model-x.jpg" alt="Model X" class="w-full">
-            </div>
-            <div class="snap-center w-full flex-shrink-0 items-center justify-center">
-                <img src="dist/image/cars/model-y.jpg" alt="Model Y" class="w-full">
-            </div>
-            <div class="snap-center w-full flex-shrink-0 items-center justify-center">
-                <img src="dist/image/cars/model-3.png" alt="Model 3" class="w-full">
-            </div>
-        </div>
+        <section id="home">
+            <!-- Slider main container -->
+            <div class="swiper">
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper">
+                    <!-- Slides -->
+                    <div class="swiper-slide"><img src="dist/image/cars/slider/model-s.jpg" alt="" class="w-full"></div>
+                    <div class="swiper-slide"><img src="dist/image/cars/slider/model-x.jpg" alt="" class="w-full"></div>
+                    <div class="swiper-slide"><img src="dist/image/cars/slider/model-y.jpg" alt="" class="w-full"></div>
+                    <div class="swiper-slide"><img src="dist/image/cars/slider/model-3.png" alt="" class="w-full"></div>
+                </div>
+                <!-- If we need pagination -->
+                <div class="swiper-pagination"></div>
 
+                <!-- If we need navigation buttons -->
+                <!-- <div class="swiper-button-prev text-transparent"></div> -->
+                <!-- <div class="swiper-button-next text-slate-500"></div> -->
+            </div>
+        </section>
+
+        <!-- Section produk start -->
+        <section id="product">
+            <div class="bg-slate-50">
+                <h2 class="text-center text-xl py-10 bg-slate-50 font-bold">Produk</h2>
+                <div class="flex flex-wrap justify-center">
+                    <!-- Button -->
+                    <div class="flex flex-wrap flex-row md:flex-col">
+                        <button
+                            class="font-bold focus:bg-slate-900 focus:text-white w-fit mx-auto my-3 px-5 py-2 rounded-xl">Model
+                            S</button>
+                        <button
+                            class="font-bold focus:bg-slate-900 focus:text-white w-fit mx-auto my-3 px-5 py-2 rounded-xl">Model
+                            X</button>
+                        <button
+                            class="font-bold focus:bg-slate-900 focus:text-white w-fit mx-auto my-3 px-5 py-2 rounded-xl">Model
+                            Y</button>
+                        <button
+                            class="font-bold focus:bg-slate-900 focus:text-white w-fit mx-auto my-3 px-5 py-2 rounded-xl">Model
+                            3</button>
+                    </div>
+
+                    <!-- Image -->
+                    <img src="dist/image/cars/produk/model-s.png" alt="model-s" class="active w-[500px] h-fit px-5">
+
+                    <!-- Product menu button -->
+                    <div class="flex flex-col">
+                        <div class="flex flex-wrap justify-center">
+                            <button
+                                class="font-bold focus:bg-slate-900 focus:text-white w-fit h-fit mx-9 my-3 px-5 py-2 rounded-xl">
+                                Spesifikasi
+                            </button>
+                            <button
+                                class="font-bold focus:bg-slate-900 focus:text-white w-fit h-fit mx-9 my-3 px-5 py-2 rounded-xl">
+                                Detail Fitur
+                            </button>
+                            <button
+                                class="font-bold focus:bg-slate-900 focus:text-white w-fit h-fit mx-9 my-3 px-5 py-2 rounded-xl">
+                                Beli Sekarang
+                            </button>
+                        </div>
+                        <div class="grid grid-cols-3 text-center">
+                            <div class="lg:mx-5 lg:my-2">
+                                <p class="font-bold text-lg">200 mph</p>
+                                <p class="text-xs">Top Speed</p>
+                            </div>
+                            <div class="lg:mx-5 lg:my-2">
+                                <p class="font-bold text-lg">396 mi</p>
+                                <p class="text-xs">Range</p>
+                            </div>
+                            <div class="lg:mx-5 lg:my-2">
+                                <p class="font-bold text-lg">$95,840</p>
+                                <p class="text-xs">Model S</p>
+                            </div>
+                            <div class="lg:mx-5 lg:my-2">
+                                <p class="font-bold text-lg">1,020 hp</p>
+                                <p class="text-xs">Peak Power</p>
+                            </div>
+                            <div class="lg:mx-5 lg:my-2">
+                                <p class="font-bold text-lg">1.99 s</p>
+                                <p class="text-xs">0-60 mph</p>
+                            </div>
+                            <div class="lg:mx-5 lg:my-2">
+                                <p class="font-bold text-lg">$126,840</p>
+                                <p class="text-xs">Model S Paid</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex flex-wrap lg:flex-nowrap px-5 py-28 lg:px-28 md:px-14 xs:p-1">
+                    <div class="m-5">
+                        <h3 class="my-2 font-bold">Stay Connected</h3>
+                        <p>
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Id, aliquid cupiditate? Tempora
+                            nemo corporis voluptatum! Impedit ex tempore aperiam, nulla eligendi perspiciatis delectus
+                            dolore, eveniet molestiae provident consequatur officia recusandae.
+                        </p>
+                    </div>
+                    <div class="m-5">
+                        <h3 class="my-2 font-bold">Immersive Sound</h3>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem magni sed maiores ex eos,
+                            repudiandae omnis voluptatibus deleniti voluptatum laborum ratione quia eligendi nobis quos.
+                            Quia hic maxime cum commodi.
+                        </p>
+                    </div>
+                    <div class="m-5">
+                        <h3 class="my-2 font-bold">Room for Everything</h3>
+                        <p>
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Beatae dolorem ipsa libero
+                            facilis! Molestias dolorum nemo possimus officiis illo quod expedita porro earum.
+                            Doloremque, error? Sit adipisci incidunt quo dicta.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- <img src="dist/image/cars/MS-Exterior-Hero-Destop.jpg" alt="Air Flow" class="w-full"> -->
+                <div class="bg-fixed h-[100vmin] lg:h-screen"
+                    style="background-image: url(dist/image/cars/MS-Exterior-Hero-Desktop.jpg); background-position: center; background-repeat: no-repeat; background-size: 100vmax;">
+                </div>
+
+
+                <div class="flex flex-wrap lg:flex-nowrap px-5 py-28 lg:px-28 md:px-14 xs:p-1">
+                    <div class="m-5">
+                        <h3 class="my-2 font-bold">Relentless Performance</h3>
+                        <p>
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Id, aliquid cupiditate? Tempora
+                            nemo corporis voluptatum! Impedit ex tempore aperiam, nulla eligendi perspiciatis delectus
+                            dolore, eveniet molestiae provident consequatur officia recusandae.
+                        </p>
+                    </div>
+                    <div class="m-5">
+                        <h3 class="my-2 font-bold">Optimized Aerodynamics</h3>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem magni sed maiores ex eos,
+                            repudiandae omnis voluptatibus deleniti voluptatum laborum ratione quia eligendi nobis quos.
+                            Quia hic maxime cum commodi.
+                        </p>
+                    </div>
+                    <div class="m-5">
+                        <h3 class="my-2 font-bold">Refined Styling</h3>
+                        <p>
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Beatae dolorem ipsa libero
+                            facilis! Molestias dolorum nemo possimus officiis illo quod expedita porro earum.
+                            Doloremque, error? Sit adipisci incidunt quo dicta.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Section produk end -->
     </main>
 
     <footer>
@@ -81,6 +250,10 @@
         &copy;Copyright 2022
     </footer>
 
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="dist/js/script.js"></script>
+    <script src="dist/js/swiper.js"></script>
 </body>
 
 </html>
