@@ -16,6 +16,7 @@
 </head>
 
 <body>
+
     <!-- Jalankan Tailwind dengan script: npm run start -->
     <!-- Jalankan Live Server dengan shortcut (Tahan)Alt + (Tekan)L (Kemudian)=> (Tekan)O (Bukan nol) -->
     <header class="transition duration-500 absolute top-0 left-0 w-full flex items-center z-10 justify-center">
@@ -92,6 +93,7 @@
     </header>
 
     <main>
+        
         <!-- Berisi konten yang akan ditampilkan -->
         <section id="home">
             <!-- Slider main container -->
@@ -99,10 +101,14 @@
                 <!-- Additional required wrapper -->
                 <div class="swiper-wrapper">
                     <!-- Slides -->
-                    <div class="swiper-slide"><img src="dist/image/cars/slider/model-s.jpg" alt="" class="w-full"></div>
-                    <div class="swiper-slide"><img src="dist/image/cars/slider/model-x.jpg" alt="" class="w-full"></div>
-                    <div class="swiper-slide"><img src="dist/image/cars/slider/model-y.jpg" alt="" class="w-full"></div>
-                    <div class="swiper-slide"><img src="dist/image/cars/slider/model-3.png" alt="" class="w-full"></div>
+                    <div class="swiper-slide"><img src="dist/image/cars/slider/crop-M3-Homepage-Desktop-LHD.jpg"
+                            alt="Model 3" class="w-full"></div>
+                    <div class="swiper-slide"><img src="dist/image/cars/slider/crop-Desktop-ModelY.jpg" alt="Model Y"
+                            class="w-full"></div>
+                    <div class="swiper-slide"><img src="dist/image/cars/slider/crop-Homepage-Model-S-Desktop-LHD.jpg"
+                            alt="Model S" class="w-full"></div>
+                    <div class="swiper-slide"><img src="dist/image/cars/slider/crop-Homepage-Model-X-Desktop-LHD.jpg"
+                            alt="Model X" class="w-full"></div>
                 </div>
                 <!-- If we need pagination -->
                 <div class="swiper-pagination"></div>
@@ -120,25 +126,33 @@
                 <div class="flex flex-wrap justify-center">
                     <!-- Button -->
                     <div class="flex flex-wrap flex-row md:flex-col">
-                        <button
-                            class="font-bold focus:bg-slate-900 focus:text-white w-fit mx-auto my-3 px-5 py-2 rounded-xl">Model
-                            S</button>
-                        <button
-                            class="font-bold focus:bg-slate-900 focus:text-white w-fit mx-auto my-3 px-5 py-2 rounded-xl">Model
-                            X</button>
-                        <button
-                            class="font-bold focus:bg-slate-900 focus:text-white w-fit mx-auto my-3 px-5 py-2 rounded-xl">Model
-                            Y</button>
-                        <button
+                        <button id="button-model-3"
                             class="font-bold focus:bg-slate-900 focus:text-white w-fit mx-auto my-3 px-5 py-2 rounded-xl">Model
                             3</button>
+                        <button id="button-model-y"
+                            class="font-bold focus:bg-slate-900 focus:text-white w-fit mx-auto my-3 px-5 py-2 rounded-xl">Model
+                            Y</button>
+                        <button id="button-model-s"
+                            class="font-bold focus:bg-slate-900 focus:text-white w-fit mx-auto my-3 px-5 py-2 rounded-xl">Model
+                            S</button>
+                        <button id="button-model-x"
+                            class="font-bold focus:bg-slate-900 focus:text-white w-fit mx-auto my-3 px-5 py-2 rounded-xl">Model
+                            X</button>
                     </div>
 
                     <!-- Image -->
-                    <img src="dist/image/cars/produk/model-s.png" alt="model-s" class="active w-[500px] h-fit px-5">
+                    <img id="model-3" src="dist/image/cars/produk/Model 3.png" alt="model 3"
+                        class="w-[500px] h-fit px-5">
+                    <img id="model-y" src="dist/image/cars/produk/Model Y.png" alt="model Y"
+                        class="hidden w-[500px] h-fit px-5">
+                    <img id="model-s" src="dist/image/cars/produk/Model S.png" alt="model S"
+                        class="hidden w-[500px] h-fit px-5">
+                    <img id="model-x" src="dist/image/cars/produk/Model X.png" alt="model X"
+                        class="hidden w-[500px] h-fit px-5">
 
                     <!-- Product menu button -->
                     <div class="flex flex-col">
+                        <!-- Menu produk -->
                         <div class="flex flex-wrap justify-center">
                             <button
                                 class="font-bold focus:bg-slate-900 focus:text-white w-fit h-fit mx-9 my-3 px-5 py-2 rounded-xl">
@@ -153,6 +167,8 @@
                                 Beli Sekarang
                             </button>
                         </div>
+
+                        <!-- Keterangan spesifikasi -->
                         <div class="grid grid-cols-3 text-center">
                             <div class="lg:mx-5 lg:my-2">
                                 <p class="font-bold text-lg">200 mph</p>
@@ -181,6 +197,77 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- Pop up detail fitur -->
+                <!-- Slider main container -->
+                <div class="swiper absolute left-0 right-0 ml-auto mr-auto bg-white w-2/3 h-[500px] rounded-3xl">
+                    <!-- Additional required wrapper -->
+                    <div class="swiper-wrapper">
+                        <!-- Slides -->
+                        <div class="swiper-slide justify-center items-center flex">
+                            <!-- Slide 1 -->
+                            <img src="dist/image/cars/detail produk/S3XY_StdFeat_Autopilot.jpg" alt="Auto Pilot"
+                                class="flex-1 h-full">
+                            <div class="m-5">
+                                <h3 class="my-3 font-bold text-lg">Auto Pilot</h3>
+                                <p class="flex-1">
+                                    Termasuk dalam setiap Tesla, Autopilot memungkinkan mobil Anda untuk menyetir,
+                                    mempercepat, dan mengerem secara otomatis untuk kendaraan lain dan pejalan kaki di
+                                    dalam
+                                    jalurnya. Fitur keselamatan dan kenyamanan canggih dirancang untuk membantu Anda
+                                    dengan
+                                    bagian yang paling memberatkan dalam berkendara, di samping fitur bantuan pengemudi
+                                    seperti pengereman darurat, peringatan tabrakan, dan pemantauan blind-spot.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="swiper-slide justify-center items-center flex">
+                            <!-- Slide 2 -->
+                            <img src="dist/image/cars/detail produk/Chargeport_SX.jpg" alt="Easy Charging"
+                                class="flex-1 h-full">
+                            <div class="m-5">
+                                <h3 class="my-3 font-bold text-lg">Easy Charging</h3>
+                                <p class="flex-1">
+                                    Charge anywhere there is electricity. Most range used for daily driving can be
+                                    topped
+                                    off using the Mobile Connector Bundle and a 110V household outlet, or upgrade to a
+                                    220V
+                                    Tesla Wall Connector for the best home charging experience. For long distance
+                                    travel,
+                                    Model 3 adds up to 175 miles of range in just 15 minutes using Tesla's Supercharger
+                                    network, getting you back on the road, sooner.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="swiper-slide justify-center items-center flex">
+                            <!-- Slide 3 -->
+                            <img src="dist/image/cars/detail produk/Model_S_mobile_app.jpeg" alt="Mobile App"
+                                class="flex-1 h-full">
+                            <div class="m-5">
+                                <h3 class="my-3 font-bold text-lg">Tesla Mobile App</h3>
+                                <p class="flex-1">
+                                    Remotely control and monitor your Tesla with Phone Key keyless driving, range &
+                                    charging
+                                    status, climate control, live GPS location and more. You can even schedule service
+                                    and
+                                    monitor your entire Tesla ecosystem, including power flow from Powerwall or from
+                                    Solar
+                                    Roof and Solar Panels.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- If we need pagination -->
+                    <div class="swiper-pagination"></div>
+
+                    <!-- If we need navigation buttons -->
+                    <!-- <div class="swiper-button-prev"></div> -->
+                    <!-- <div class="swiper-button-next"></div> -->
+
+                    <!-- If we need scrollbar -->
+                    <!-- <div class="swiper-scrollbar"></div> -->
+                </div>
+
                 <div class="flex flex-wrap lg:flex-nowrap px-5 py-28 lg:px-28 md:px-14 xs:p-1">
                     <div class="m-5">
                         <h3 class="my-2 font-bold">Stay Connected</h3>
