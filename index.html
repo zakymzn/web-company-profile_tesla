@@ -8,7 +8,7 @@
     <title>Tesla - Web Company Profile</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
@@ -16,10 +16,12 @@
 </head>
 
 <body>
-
     <!-- Jalankan Tailwind dengan script: npm run start -->
     <!-- Jalankan Live Server dengan shortcut (Tahan)Alt + (Tekan)L (Kemudian)=> (Tekan)O (Bukan nol) -->
-    <header class="transition duration-500 absolute top-0 left-0 w-full flex items-center z-10 justify-center">
+    <div id="blur-container" class="hidden fixed z-[999] top-0 w-screen h-screen backdrop-blur-sm">
+    </div>
+
+    <header class="transition duration-500 absolute top-0 left-0 w-full flex items-center z-[9999] justify-center">
         <div class="container">
             <div class="flex items-center justify-center relative py-2">
                 <!-- Logo ketika hamburger muncul -->
@@ -93,9 +95,9 @@
     </header>
 
     <main>
-        
+
         <!-- Berisi konten yang akan ditampilkan -->
-        <section id="home">
+        <section id="home" class="filter-none">
             <!-- Slider main container -->
             <div class="swiper">
                 <!-- Additional required wrapper -->
@@ -154,15 +156,15 @@
                     <div class="flex flex-col">
                         <!-- Menu produk -->
                         <div class="flex flex-wrap justify-center">
-                            <button
+                            <button id="spesifikasi"
                                 class="font-bold focus:bg-slate-900 focus:text-white w-fit h-fit mx-9 my-3 px-5 py-2 rounded-xl">
                                 Spesifikasi
                             </button>
-                            <button
+                            <button id="detail-fitur"
                                 class="font-bold focus:bg-slate-900 focus:text-white w-fit h-fit mx-9 my-3 px-5 py-2 rounded-xl">
                                 Detail Fitur
                             </button>
-                            <button
+                            <button id="beli-sekarang"
                                 class="font-bold focus:bg-slate-900 focus:text-white w-fit h-fit mx-9 my-3 px-5 py-2 rounded-xl">
                                 Beli Sekarang
                             </button>
@@ -200,17 +202,19 @@
 
                 <!-- Pop up detail fitur -->
                 <!-- Slider main container -->
-                <div class="swiper absolute left-0 right-0 ml-auto mr-auto bg-white w-2/3 h-[500px] rounded-3xl">
+                <div id="pop-up"
+                    class="swiper hidden fixed z-[9999] top-0 bottom-0 left-0 right-0 m-auto bg-white w-2/3 h-[500px] rounded-3xl transition duration-300">
                     <!-- Additional required wrapper -->
                     <div class="swiper-wrapper">
                         <!-- Slides -->
-                        <div class="swiper-slide justify-center items-center flex">
-                            <!-- Slide 1 -->
+                        <!-- Slide 1 -->
+                        <div
+                            class="swiper-slide justify-center items-center flex flex-wrap overflow-auto lg:overflow-hidden">
                             <img src="dist/image/cars/detail produk/S3XY_StdFeat_Autopilot.jpg" alt="Auto Pilot"
-                                class="flex-1 h-full">
-                            <div class="m-5">
+                                class="w-2/3 lg:h-min lg:w-1/2 lg:flex-1">
+                            <div class="m-10 w-fit lg:flex-1">
                                 <h3 class="my-3 font-bold text-lg">Auto Pilot</h3>
-                                <p class="flex-1">
+                                <p class="text-sm">
                                     Termasuk dalam setiap Tesla, Autopilot memungkinkan mobil Anda untuk menyetir,
                                     mempercepat, dan mengerem secara otomatis untuk kendaraan lain dan pejalan kaki di
                                     dalam
@@ -221,13 +225,14 @@
                                 </p>
                             </div>
                         </div>
-                        <div class="swiper-slide justify-center items-center flex">
-                            <!-- Slide 2 -->
+
+                        <!-- Slide 2 -->
+                        <div class="swiper-slide justify-center items-center flex flex-wrap overflow-auto">
                             <img src="dist/image/cars/detail produk/Chargeport_SX.jpg" alt="Easy Charging"
-                                class="flex-1 h-full">
-                            <div class="m-5">
+                                class="w-2/3 lg:h-min lg:w-1/2 lg:flex-1">
+                            <div class="m-10 w-fit lg:flex-1">
                                 <h3 class="my-3 font-bold text-lg">Easy Charging</h3>
-                                <p class="flex-1">
+                                <p class="text-sm">
                                     Charge anywhere there is electricity. Most range used for daily driving can be
                                     topped
                                     off using the Mobile Connector Bundle and a 110V household outlet, or upgrade to a
@@ -239,13 +244,14 @@
                                 </p>
                             </div>
                         </div>
-                        <div class="swiper-slide justify-center items-center flex">
-                            <!-- Slide 3 -->
+
+                        <!-- Slide 3 -->
+                        <div class="swiper-slide justify-center items-center flex flex-wrap overflow-auto">
                             <img src="dist/image/cars/detail produk/Model_S_mobile_app.jpeg" alt="Mobile App"
-                                class="flex-1 h-full">
-                            <div class="m-5">
+                                class="w-2/3 lg:h-min lg:w-1/2 lg:flex-1">
+                            <div class="m-10 w-fit lg:flex-1">
                                 <h3 class="my-3 font-bold text-lg">Tesla Mobile App</h3>
-                                <p class="flex-1">
+                                <p class="text-sm">
                                     Remotely control and monitor your Tesla with Phone Key keyless driving, range &
                                     charging
                                     status, climate control, live GPS location and more. You can even schedule service
@@ -267,7 +273,7 @@
                     <!-- If we need scrollbar -->
                     <!-- <div class="swiper-scrollbar"></div> -->
                 </div>
-
+                
                 <div class="flex flex-wrap lg:flex-nowrap px-5 py-28 lg:px-28 md:px-14 xs:p-1">
                     <div class="m-5">
                         <h3 class="my-2 font-bold">Stay Connected</h3>
@@ -330,14 +336,268 @@
             </div>
         </section>
         <!-- Section produk end -->
+
+        <!-- Section review start -->
+        <section id="Review">
+            <div class="container bg-primary-black pb-4">
+                <div class="max-w-screen-xl mx-auto">
+                    <h2 class="text-white font-sans font-medium pb-16 text-center pt-10 text-3xl ">Review</h2>
+                    <!--content 1-->
+                    <div class="flex flex-wrap lg:grid lg:grid-cols-2 pb-10">
+
+                        <div class="px-10 lg:order-2 pb-10">
+
+                            <div class="flex wrap gap-4 pb-6">
+                                <div class="flex-1 mx-auto">
+                                    <h2 class="text-white font-medium">Sultan Mustopa</h2>
+                                    <h2 class="text-white pb-2 font-light">Dosen Universitas Ikan Lele</h2>
+                                    <hr class="pb-2">
+                                    <img src="dist/image/review-star/5.png" alt="star" class="drop-shadow-xl">
+                                </div>
+
+                                <img src="dist/image/produk/avatar/avatar1.png" alt="gambarprofile1"
+                                    class="block h-24 rounded-full flex-none border-6">
+                            </div>
+
+                            <div>
+                                <p class="font-sans text-base text-white text-justify italic">“ Pengalaman saya selama 3
+                                    bulan bersama Model S ini sangat memuaskan sekali, fiturnya sangat memudahkan saya
+                                    dalam mengendari mobil canggih ini, namun saya masih sedikit ragu untuk menggunakan
+                                    self drivingnya untuk penggunaan sehari-hari, overall mobil ini sangat perfect bagi
+                                    kebutuhan saya terlebih designya yang sporty membuat mobil ini sangat keren ketika
+                                    saya mengendarainya, hal yang paling saya khawatirkan hanyalah ketersedian service
+                                    resmi yang masih minim dinegara isekai, jadi bisa dibilang saya sangat puas! ” </p>
+                            </div>
+                        </div>
+
+                        <div class="lg:order-1">
+                            <img src="dist/image/produk/img/reviewproduct1.png" alt="mobil1"
+                                class="lg:float-right mx-auto rounded-3xl drop-shadow-xl maxmd:hidden">
+                        </div>
+                    </div>
+
+                    <!--end content 1-->
+
+
+                    <!--content 2-->
+                    <div class="flex flex-wrap lg:grid lg:grid-cols-2 pb-10">
+
+                        <div class="px-10 pb-10">
+
+                            <div class="flex wrap gap-4 pb-6 float">
+                                <div class="flex-1 mx-auto">
+                                    <h2 class="text-white font-medium">James Sutresno</h2>
+                                    <h2 class="text-white pb-2 font-light">Founder Startup TokTik</h2>
+                                    <hr class="pb-2">
+                                    <img src="dist/image/review-star/5.png" alt="star" class="drop-shadow-xl">
+                                </div>
+
+                                <img src="dist/image/produk/avatar/avatar2.png" alt="gambarprofile1"
+                                    class="block h-24 rounded-full flex-none border-6 ">
+                            </div>
+
+                            <div>
+                                <p class="font-sans text-base text-white text-justify italic">“ Bagi saya Tesla adalah
+                                    mobil terbaik yang pernah saya coba selama hidup saya, self driving sangat membantu
+                                    saya dalam mengendari mobil ini secara otomatis ketika saya sedang kurang fit. hal
+                                    ini tidak bisa saya dapatkan dari mobil lain, terlebih chargingnya yang sangat cepat
+                                    membuat saya tidak pernah takut untuk berpergian jauh . Saya sangat merekomendasikan
+                                    kalian untuk tesla jika anda ingin merasakan experience yang berbeda dari yang
+                                    biasanya. TOP MARKOTOP TESLA MODEL X !!! ” </p>
+                            </div>
+                        </div>
+
+                        <div>
+                            <img src="dist/image/produk/img/reviewproduct2.png" alt="mobil2"
+                                class="lg:float-left rounded-3xl drop-shadow-xl maxmd:hidden">
+                        </div>
+                    </div>
+                    <!--end content 2-->
+
+                    <!--content 3-->
+                    <div class="flex flex-wrap lg:grid lg:grid-cols-2 pb-5">
+
+                        <div class="px-10 lg:order-2 pb-10">
+
+                            <div class="flex wrap gap-4 pb-6">
+                                <div class="flex-1 mx-auto">
+                                    <h2 class="text-white font-medium">Albert Asep</h2>
+                                    <h2 class="text-white pb-2 font-light">Member Airdrop Sultan</h2>
+                                    <hr class="pb-2">
+                                    <img src="dist/image/review-star/5.png" alt="star"
+                                        class="max-w-full h-auto drop-shadow-xl">
+                                </div>
+
+                                <img src="dist/image/produk/avatar/avatar1.png" alt="gambarprofile1"
+                                    class="block h-24 rounded-full flex-none border-6">
+                            </div>
+
+                            <div>
+                                <p class="font-sans text-base text-white text-justify italic">“ Pengalaman saya selama 3
+                                    bulan bersama Model S ini Sangat memuaskan sekali, fiturnya sangat memudahkan saya
+                                    dalam mengendari mobil canggih ini, namun sayamasih sedikit ragu untuk menggunakan
+                                    self drivingnya untuk penggunaan sehari-hari, overall mobil ini sangat perfect bagi
+                                    kebutuhan saya terlebih designya yang sporty membuat mobil ini sangat keren ketika
+                                    saya mengendarainya, hal yang paling saya khawatirkan hanyalah ketersedian service
+                                    resmi yang masih minim dinegara isekai, jadi bisa dibilang saya sangat puas! ” </p>
+                            </div>
+                        </div>
+
+                        <div class="lg:order-1">
+                            <img src="dist/image/produk/img/reviewproduct1.png" alt="mobil1"
+                                class="lg:float-right mx-auto rounded-3xl drop-shadow-xl maxmd:hidden">
+                        </div>
+                    </div>
+
+                    <!--end content 3-->
+                </div>
+
+
+            </div>
+        </section>
+        <!-- Section review end -->
+
+        <!-- Section about start -->
+        <section id="about">
+            <div class="container bg-primary-white">
+                <h2 class="text-primary-black font-sans font-medium text-3xl pb-16 text-center pt-10">Tentang Kami</h2>
+                <div class="lg:flex lg:flex-row justify-center">
+                    <div class="pb-10 basis-4/12">
+                        <h3 class="text-primary-black font-sans font-medium text-xl pb-3 text-center">Sejarah Tesla</h3>
+                        <p class="text-light text-justify text-primary-black px-10 pb-6"><span
+                                class="font-Medium">Tesla</span> Motors didirikan oleh dua insinyur otomotif, yaitu
+                            Martin Ebenhard dan Marc Tarpenning pada Juli 2003. Kedua orang ini ingin membuktikan bahwa
+                            mobil listrik lebih baik, lebih cepat, lebih irit pengeluaran dalam bahan bakar dan tentunya
+                            lebih menyenangkan untuk dikendarai dibanding mobil berbahan bakar minyak karena bisa
+                            melakukan auto driving.</p>
+                        <img src="dist/image/about-me/pict1.png" alt="about1"
+                            class="mx-auto border-primary-black border-6">
+                    </div>
+                    <div>
+                        <img src="dist/image/Line.png" alt="line" class="maxmd:hidden basis-2/12">
+                    </div>
+
+                    <div class="pb-10 basis-4/12">
+                        <h3 class="text-primary-black font-sans font-medium text-xl pb-3 text-center">Visi dan Misi</h3>
+                        <p class="text-light text-justify text-primary-black px-10 pb-12">Misi Tesla adalah untuk
+                            mempercepat transisi dunia ke energi berkelanjutan melalui kendaraan listrik dan produk-
+                            produk energi yang semakin terjangkau.<br>Visi Tesla adalah untuk “menciptakan perusahaan
+                            mobil paling menarik di abad ke-21 dengan mendorong transisi dunia ke dalam kendaraan
+                            listrik”</p>
+                        <img src="dist/image/about-me/pict2.png" alt="about1"
+                            class="mx-auto border-primary-black border-6">
+                    </div>
+                </div>
+
+                <div class="px-52 pb-32 maxmd:hidden">
+                    <div class="bg-fixed pb-80 border-primary-black border-6"
+                        style="background-image: url(dist/image/about-me/pict3.png); background-position: center; background-repeat: no-repeat; background-size: contain;">
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+        <!-- Section about end -->
+
+        <!-- Section team start -->
+        <section id="team">
+            <div class="container">
+                <div class="bg-primary-black py-24">
+                </div>
+
+
+
+            </div>
+        </section>
+        <!-- Section team end -->
+
+        <!-- Section contact start -->
+        <section id="contact">
+            <div class="container">
+                <div class="py-12 px-6 md:px-20 bg-primary-white text-primary-black">
+                    <div class="drop-shadow-xl bg-gray-100 rounded-lg pb-12">
+                        <h2
+                            class="text-primary-black drop-shadow-xl font-sans font-medium text-3xl pb-6 text-center pt-10">
+                            Hubungi Kami</h2>
+                        <p class="text-light text-center px-8 lg:px-44 text-primary-black pb-12">For further questions,
+                            including partnership opportunities, please email hello@creative-tim.com or contact using
+                            our contact form.</p>
+
+                        <div class="lg:grid lg:grid-cols-2 justify-center gap-8 pb-4">
+                            <div class="px-4 md:px-24 pb-4 lg:pr-0">
+                                <div class="text-light pb-2 text-primary-black font-bold">Full Name</div>
+                                <input type="text"
+                                    class="border-2 border-gray-300 w-full maxmd: px-2 py-2 self-center rounded-lg"
+                                    placeholder="Full Name" aria-label="Full Name">
+                            </div>
+                            <div class="px-4 md:px-24 pb-4 lg:pl-0">
+                                <div class="text-light pb-2 text-primary-black font-bold">Email</div>
+                                <input type="text"
+                                    class="border-2 border-gray-300 w-full px-2 py-2 self-center rounded-lg"
+                                    placeholder="hello@creative-tim.com" aria-label="Email">
+                            </div>
+                        </div>
+
+                        <div class="px-4 md:px-24 pb-4">
+                            <div class="text-light pb-2 text-primary-black font-bold">How can we help you?</div>
+                            <div class="inputBox">
+                                <textarea class="border-2 border-gray-300 w-full px-2 pt-2 pb-12 self-center rounded-lg"
+                                    placeholder="Describe your problem in at least 250 characters"></textarea>
+                            </div>
+
+
+                            <div
+                                class="w-44 py-3 font-sans font-bold bg-primary-black rounded-lg text-xs text-white text-center place-self-center">
+                                SEND MESSAGE</div>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <!-- Section contact end -->
+
+
+
     </main>
 
     <footer>
         <!-- Berisi link-link social media yang dibutuhkan dan copyright -->
-        &copy;Copyright 2022
+        <div class="container">
+            <div class="bg-primary-black py-24">
+                <div class="flex flex-col justify-center pb-8">
+                    <img class="self-center w-1/10 pb-6" src="dist/image/footer/tesla-logo.png" alt="logo-tesla">
+                    <div class="w-1/2 lg:w-1/6 text-center self-center text-white text-opacity-70">Tesla's mission
+                        is to accelerate the world's transition to sustainable energy.</div>
+                </div>
+
+                <div class="flex flex-wrap gap-4 justify-center">
+                    <a href="#">
+                        <span class="iconify" data-icon="bxl:facebook" style="color: white;" data-width="30"
+                            data-height="30"></span>
+                    </a>
+                    <a href="#">
+                        <span class="iconify" data-icon="bi:twitter" style="color: white;" data-width="30"
+                            data-height="30"></span>
+                    </a>
+
+                    <a href="#">
+                        <span class="iconify" data-icon="bi:instagram" style="color: white;" data-width="30"
+                            data-height="30"></span>
+                    </a>
+
+                </div>
+            </div>
+
+        </div>
     </footer>
 
     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
     <script src="node_modules/jquery/dist/jquery.js"></script>
     <script src="dist/js/script.js"></script>
     <script src="dist/js/swiper.js"></script>
