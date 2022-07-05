@@ -26,6 +26,37 @@ $(window).click(function (e) {
 });
 
 // Mengubah gambar saat tombol produk diklik
+$('#button-model-3').click(function (e) { 
+    e.preventDefault();
+    $('#model-3').removeClass('hidden');
+    $('#model-y').addClass('hidden');
+    $('#model-s').addClass('hidden');
+    $('#model-x').addClass('hidden');
+});
+
+$('#button-model-y').click(function (e) { 
+    e.preventDefault();
+    $('#model-3').addClass('hidden');
+    $('#model-y').removeClass('hidden');
+    $('#model-s').addClass('hidden');
+    $('#model-x').addClass('hidden');
+});
+
+$('#button-model-s').click(function (e) { 
+    e.preventDefault();
+    $('#model-3').addClass('hidden');
+    $('#model-y').addClass('hidden');
+    $('#model-s').removeClass('hidden');
+    $('#model-x').addClass('hidden');
+});
+
+$('#button-model-x').click(function (e) { 
+    e.preventDefault();
+    $('#model-3').addClass('hidden');
+    $('#model-y').addClass('hidden');
+    $('#model-s').addClass('hidden');
+    $('#model-x').removeClass('hidden');
+});
 
 // Menampilkan pop up saat tombol detail fitur diklik
 $('#detail-fitur').click(function (e) {

@@ -1100,6 +1100,14 @@ video {
   font-weight: 300;
 }
 
+.font-normal {
+  font-weight: 400;
+}
+
+.font-semibold {
+  font-weight: 600;
+}
+
 .italic {
   font-style: italic;
 }
@@ -1245,6 +1253,11 @@ body {
 .focus\:text-white:focus {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.focus-visible\:bg-slate-900:focus-visible {
+  --tw-bg-opacity: 1;
+  background-color: rgb(15 23 42 / var(--tw-bg-opacity));
 }
 
 .group:hover .group-hover\:bg-slate-200\/75 {
